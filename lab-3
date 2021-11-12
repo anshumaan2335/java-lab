@@ -1,0 +1,49 @@
+import java.util.*;
+class test
+{
+    public static void main(String args[])
+    { Scanner a=new Scanner(System.in);
+        System.out.println("enter the number of object you want");
+     int n =a.nextInt();
+     book o[]=new book[n];
+    for (int i=0;i<n;i++)
+    {  
+      
+       o[i]= new book();
+         o[i].input();
+       System.out.println(o[i].toSring());
+        
+    }
+        
+        
+}}
+class book
+{  
+   String name;
+    String author;
+    int price;
+    int num_pages;
+ book()
+ {
+     name="";
+     author="";
+     price=0;
+     num_pages=0;
+     
+ }
+ void input()
+ {Scanner sc=new Scanner(System.in);
+     System.out.println("enter the name author name price and number of pages respectively.");
+    name=sc.nextLine();
+    author=sc.nextLine();
+    price = sc.nextInt();
+    num_pages=sc.nextInt();
+ }
+public  String toSring()
+ {
+     return name+" "+author+" "+price+" "+num_pages;
+ }
+}
+
+
+
