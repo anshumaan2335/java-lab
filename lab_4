@@ -1,0 +1,74 @@
+import java.util.Scanner;
+abstract class shape
+{  double a,b;
+    abstract void printdata();
+    
+}
+ class rectangle extends shape
+{
+    public void getdata(double x,double y)
+    {
+        a=x;
+        b=y;
+    }
+void printdata()
+{
+    System.out.println("the area if rectangle is "+(a*b));
+}
+}
+class triangle extends shape
+{
+    public void getdata(double x,double y)
+    {
+        a=x;
+        b=y;
+    }
+void printdata()
+{
+    System.out.println("the area if triangle is "+(0.5*a*b));
+}
+    
+}
+class circle extends shape
+{
+void getdata(double x)
+{
+    a=x;
+}
+void printdata()
+{
+    System.out.println("the area if circle is "+(3.174*a*a));
+}
+}
+public class Main
+{
+    public static void main(String args[])
+    {
+        int ch;double a,b;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the choice\n 1 for rectangle\n 2 for triangle\n 3 for circle");
+        ch=sc.nextInt();
+        rectangle r= new rectangle();
+        triangle t =new triangle();
+        circle c= new circle();
+        switch(ch)
+        {
+            case 1: System.out.println("enter the data");
+                    a=sc.nextDouble();
+                    b=sc.nextDouble();
+                    r.getdata(a,b);
+                    r.printdata();
+            case 2: System.out.println("enter the data");
+                    a=sc.nextDouble();
+                     b=sc.nextDouble();
+                     t.getdata(a,b);
+                     t.printdata();
+            case 3: System.out.println("enter the data");
+                     a=sc.nextDouble();
+                     c.getdata(a);
+                     c.printdata();
+            default: System.out.println("wrong input please try again ");
+        }
+        
+    }
+}
